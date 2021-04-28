@@ -7,7 +7,7 @@ import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({currentId, setCurrentId}) => {
-    const [postData, setPostData] = useState({creator: '', title: '', message:'', tags: '', selectedFile: '' });
+    const [postData, setPostData] = useState({title: '', author: '', year:'', sepractice: '', claim: '', evidencestrength: ''});
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id == currentId) : null);
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -30,18 +30,19 @@ const Form = ({currentId, setCurrentId}) => {
 
     const clear = () => {
         setCurrentId(null);
-        setPostData({creator: '', title: '', message:'', tags: '', selectedFile: '' });
+        setPostData({title: '', author: '', year:'', sepractice: '', claim: '', evidencestrength: ''});
     }
 
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">{currentId ? 'Editing' : 'Creating' } a Memory</Typography>
-                <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator}onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
+                <Typography variant="h6">{currentId ? 'Editing' : 'Creating' } a Research Article</Typography>
                 <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title}onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
-                <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message}onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
-                <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags}onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}/>
-                <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })}/></div>
+                <TextField name="author" variant="outlined" label="Author" fullWidth value={postData.author}onChange={(e) => setPostData({ ...postData, author: e.target.value })}/>
+                <TextField name="year" variant="outlined" label="Year" fullWidth value={postData.year}onChange={(e) => setPostData({ ...postData, year: e.target.value })}/>
+                <TextField name="sepractice" variant="outlined" label="SE Practice" fullWidth value={postData.sepractice}onChange={(e) => setPostData({ ...postData, sepractice: e.target.value })}/>
+                <TextField name="claim" variant="outlined" label="Claim" fullWidth value={postData.claim}onChange={(e) => setPostData({ ...postData, claim: e.target.value })}/>
+                <TextField name="evidencestrength" variant="outlined" label="Strength of Evidence" fullWidth value={postData.evidencestrength}onChange={(e) => setPostData({ ...postData, evidencestrength: e.target.value })}/>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
                 <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
             </form>

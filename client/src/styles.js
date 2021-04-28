@@ -2,17 +2,18 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     appBar: {
+        borderRadius: 15,
         margin: '30px 0',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'left',
+        justifyContent: 'center',
         alignItems: 'center',
       },
       heading: {
-        color: 'Black',
+        color: 'black',
       },
       image: {
-        marginRight: '10px',
+        padding: '10px',
       },
       [theme.breakpoints.down('sm')]: {
         mainContainer: {
