@@ -25,17 +25,42 @@ const App = () => {
                 <Typography className = {classes.heading} variant="h4" align="center">SEEDS</Typography>
             </AppBar>
             <Grow in>
+            <Container>
+                <Grid item xs={12} sm={12}>
+                <div>Search Filters</div>
+                <select>
+                    <option selected value="tdd">TDD</option>
+                    <option value="continuousIntegration">Continous Integration</option>
+                    <option value="refactoring">Refactoring</option>
+                    <option value="unitTesting">Unit Testing</option>
+                    <option value="autoAcceptanceTest">Automatic Acceptance Tests</option>
+                    <option value="continuousDeployment">Continuous Deployment</option>
+                    <option value="chaosEngineering">Chaos Engineering</option>
+                </select>
+                <select>
+                    <option selected value="c1">Claim 1</option>
+                    <option value="c2">Claim 2</option>
+                    <option value="c3">Claim 3</option>
+                    <option value="c4">Claim 4</option>
+                </select>
+                <button onclick="">Search</button>
+                </Grid>
+            </Container>
+            </Grow>
                 <Container>
                     <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
-                        <Grid item xs={12} sm={7}>
+                    <Grow in>
+                        <Grid item xs={12} sm={12}>
                             <Posts setCurrentId={setCurrentId} />
                         </Grid>
+                        </Grow>
+                        <Grow out>
                         <Grid item xs={12} sm={4}>
                             <Form currentId={currentId} setCurrentId={setCurrentId} />
                         </Grid>
+                        </Grow>
                     </Grid>
                 </Container>
-            </Grow>
         </Container>
     )
 }
