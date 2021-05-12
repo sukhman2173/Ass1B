@@ -26,25 +26,25 @@ const App = () => {
             </AppBar>
             <Grow in>
             <Container>
+            <AppBar className={classes.appBar} position="static" color="inherit">
                 <Grid item xs={12} sm={12}>
-                <div>Search Filters</div>
+                <Typography className = {classes.heading} variant="h4" align="center">Search Filters</Typography>
+                <Typography className = {classes.heading} variant="h4" align="center"> 
                 <select>
-                    <option selected value="tdd">TDD</option>
-                    <option value="continuousIntegration">Continous Integration</option>
-                    <option value="refactoring">Refactoring</option>
-                    <option value="unitTesting">Unit Testing</option>
-                    <option value="autoAcceptanceTest">Automatic Acceptance Tests</option>
-                    <option value="continuousDeployment">Continuous Deployment</option>
-                    <option value="chaosEngineering">Chaos Engineering</option>
+                    <option selected value="sepractice">Select SE Practice</option>
+                    <option value="tdd">TDD</option>
                 </select>
                 <select>
-                    <option selected value="c1">Claim 1</option>
-                    <option value="c2">Claim 2</option>
-                    <option value="c3">Claim 3</option>
-                    <option value="c4">Claim 4</option>
+                    <option selected value="claim">Select Claim</option>
+                    <option value="c1">Improves Teamwork</option>
+                    <option value="c2">Improves Code Quality</option>
+                    <option value="c3">Improves Productivity</option>
+                    <option value="c4">Improves Code Output</option>
                 </select>
                 <button onclick="">Search</button>
+                </Typography>
                 </Grid>
+                </AppBar>
             </Container>
             </Grow>
                 <Container>
