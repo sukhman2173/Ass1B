@@ -26,12 +26,12 @@ const Post = ({ post, setCurrentId }) => {
     
     return (
         <TableRow key={post.name}>
-        <TableCell align="right">{post.title}</TableCell>
-        <TableCell align="right">{post.author}</TableCell>
-        <TableCell align="right">{post.year}</TableCell>
-        <TableCell align="right">{post.sepractice}</TableCell>
-        <TableCell align="right">{post.claim}</TableCell>
-        <TableCell align="right">{post.evidencestrength}</TableCell>
+        <TableCell width="200">{post.title}</TableCell>
+        <TableCell width="10">{post.author}</TableCell>
+        <TableCell width="10">{post.year}</TableCell>
+        <TableCell width="10">{post.sepractice}</TableCell>
+        <TableCell width="10">{post.claim}</TableCell>
+        <TableCell width="10">{post.evidencestrength}</TableCell>
         </TableRow>
     );
 };
