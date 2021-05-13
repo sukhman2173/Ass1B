@@ -25,43 +25,14 @@ const Post = ({ post, setCurrentId }) => {
     const dispatch = useDispatch();
     
     return (
-        <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
-            <TableHead>
-            <TableRow>
-                <TableCell>Title</TableCell>
-                <TableCell align="right">Author(s)</TableCell>
-                <TableCell align="right">Year</TableCell>
-                <TableCell align="right">SE Practice</TableCell>
-                <TableCell align="right">Claim</TableCell>
-                <TableCell align="right">Evidence Strength</TableCell>
-                <TableCell align="right"></TableCell>
-            </TableRow>
-            </TableHead>
-            <TableBody>
-                <TableRow key={post.name}>
-                <TableCell align="right">{post.title}</TableCell>
-                <TableCell align="right">{post.author}</TableCell>
-                <TableCell align="right">{post.year}</TableCell>
-                <TableCell align="right">{post.sepractice}</TableCell>
-                <TableCell align="right">{post.claim}</TableCell>
-                <TableCell align="right">{post.evidencestrength}</TableCell>
-                <TableCell>
-                    <Button style={{color: "blue"}} size="small" onClick={() => setCurrentId(post._id)}>
-                        <MoreHorizIcon fontSize="default"/>
-                        Edit
-                    </Button>
-                    <p></p>
-                    <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
-                        <DeleteIcon fontSize="small"/>
-                        Delete
-                    </Button>
-                    <p></p>
-                </TableCell>
-                </TableRow>
-            </TableBody>
-        </Table>
-        </TableContainer>
+        <TableRow key={post.name}>
+        <TableCell align="right">{post.title}</TableCell>
+        <TableCell align="right">{post.author}</TableCell>
+        <TableCell align="right">{post.year}</TableCell>
+        <TableCell align="right">{post.sepractice}</TableCell>
+        <TableCell align="right">{post.claim}</TableCell>
+        <TableCell align="right">{post.evidencestrength}</TableCell>
+        </TableRow>
     );
 };
 
