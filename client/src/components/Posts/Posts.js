@@ -26,11 +26,11 @@ const Posts = ({ setCurrentId }) => {
             <TableHead>
             <TableRow>
                 <TableCell>Title</TableCell>
-                <TableCell align="right">Author(s)</TableCell>
-                <TableCell align="right">Year</TableCell>
-                <TableCell align="right">SE Practice</TableCell>
-                <TableCell align="right">Claim</TableCell>
-                <TableCell align="right">Evidence Strength</TableCell>
+                <TableCell>Author(s)</TableCell>
+                <TableCell>Year</TableCell>
+                <TableCell>SE Practice</TableCell>
+                <TableCell>Claim</TableCell>
+                <TableCell>Evidence Strength</TableCell>
             </TableRow>
             </TableHead>
                 {posts.map((post) => (
